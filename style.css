@@ -1,0 +1,10 @@
+body {
+	font-family: "Montserrat";
+	font-weight: 400;
+}
+
+
+h1,h2,h3,h4 {
+	font-family: "EB Garamond" !important;
+	font-weight: 800;
+}
