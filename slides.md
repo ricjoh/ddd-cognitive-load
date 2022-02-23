@@ -1,211 +1,234 @@
 ---
 theme: purplin
-title: Slidev Theme Purplin
+title: DDD Cognitive Load
+
+---
+## MySQL Performance and Indexing
+
+We can alter the MySQL configuration like so:
+
+```
+/etc/my.cnf
+slow_query_log_file             =/var/log/mysqld.log.slow
+slow_query_log                  = 1
+long_query_time                 = 5
+log_queries_not_using_indexes   = 1
+log_slow_verbosity              = explain
+```
+
+EXPLAIN command
+
+```
+CREATE INDEX `CustOrderOfferID` ON `CustomerOrder` (`OfferID`);
+```
+---
+layout: default
 ---
 
 # Team Cognitive Load
 
 Making life easier for everyone
 
-
 ---
-layout: intro
----
-
-## `<BarBottom />` component
-
-<br />
-<br />
-
-<div class="grid grid-cols-2 gap-x-4">
-<div>
-This component displays a bar at the bottom of the slide. The component needs to be added to each slide where we want to display it.
-
-Receives a `title` prop that is the text displayed on the left.
-
-This component uses `slots` to add items on the right. Exist an `<Item />` component that receives a `text` prop and uses `slots` to add the icon/image.
- 
-Exist a large [list of icon collections](https://icones.js.org/collection) available that you can use. These icons are imported automatically by _slidev_, you don't need to configure anything else to use them.
-
-</div>
-<div>
-
-### Slide example
-
-```markdown
----
-layout: intro
+layout: default
 ---
 
-# Content
-```
+# What is Cogitive Load?
 
-</div>
-</div>
+## Intrinsic cognitive load
+Relates to aspects of the task fundamental to the problem space (e.g., “What is the structure of a Java class?” “How do I create a new method?”)
 
 
 ---
-layout: intro
+layout: default
 ---
 
-## `<BarBottom />` with custom icons/images
+# What is Cogitive Load?
 
-<br />
-<br />
+## Intrinsic cognitive load
+Relates to aspects of the task fundamental to the problem space (e.g., “What is the structure of a Java class?” “How do I create a new method?”)
 
-<div class="grid grid-cols-2 gap-x-4">
-<div>
-
-You can use your own icons/images if you want.
-
-Only need to add an `<Item />` component and use `slots` features.
-
-Also, you can use [Windi CSS](https://windicss.org/) to add style to the icon, for example, adjust the width o height.
-
-</div>
-<div>
-
-### Slide example
-
-```markdown
----
-layout: intro
----
-
-# Content
-
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <img
-      src="https://d33wubrfki0l68.cloudfront.net/273aa82ec83b3e4357492a201fb68048af1c3e6a/8f657/logo.svg"
-      class="w-4"
-    />
-  </Item>
-</BarBottom>
-```
-
-</div>
-</div>
-
-<BarBottom  title="Slidev theme purplin">
-  <Item text="slidevjs/slidev">
-    <carbon:logo-github />
-  </Item>
-  <Item text="Slidevjs">
-    <carbon:logo-twitter />
-  </Item>
-  <Item text="sli.dev">
-    <img
-      src="https://d33wubrfki0l68.cloudfront.net/273aa82ec83b3e4357492a201fb68048af1c3e6a/8f657/logo.svg"
-      class="w-4"
-    />
-  </Item>
-</BarBottom>
+## Extraneous cognitive load
+Relates to the environment in which the task is being done (e.g., “How do I deploy this component again?” “How do I configure this service?”)
 
 ---
-layout: image-x
-image: 'https://user-images.githubusercontent.com/13499566/138951075-018e65d5-b5fe-4200-9ea7-34315b1764da.jpg'
-imageOrder: 1
+layout: default
 ---
 
-# layout: image-x
+# What is Cogitive Load?
 
-imageOrder: 1
+## Intrinsic cognitive load
+Relates to aspects of the task fundamental to the problem space (e.g., “What is the structure of a Java class?” “How do I create a new method?”)
 
-image 600x600
+## Extraneous cognitive load
+Relates to the environment in which the task is being done (e.g., “How do I deploy this component again?” “How do I configure this service?”)
 
----
-layout: image-x
-image: 'https://user-images.githubusercontent.com/13499566/138950866-7d2addb2-fe3f-41f5-aab6-d35688516612.jpg'
-imageOrder: 2
----
-
-# layout: image-x
-
-imageOrder: 2
-
-image 1080x1920
+## Germane cognitive load
+Relates to aspects of the task that need special attention for learning or high performance (e.g., “How should this service interact with the ABC service?”)
 
 ---
-layout: quote
-position: center
+layout: default
 ---
 
-# &ldquo;layout: quote&rdquo;
-position: center
+# What is Cogitive Load?
 
-'position' variants: left (default), center, right
+## Summary
+Intrinsic -- Skills/Technology
 
+Extraneous -- Company and Systems
+
+Germane -- How does THIS app or solution work
 
 ---
 
-# What is Slidev?
+# What is Team Cogitive Load?
+* How much &ldquo;extra&rdquo; thinking is required to complete a project.
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-  
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+* Causes
+    - **Intrinsic load** from mismatched skillset for tasks
+    - **Extraneous load** from not having thin, easy or consitent platforms.
+    - **Germane load** from lead developers having everything in thier head and no big picture communication.
+    - This germane load spills into cognitive load for Tech Support
 
 ---
 
-# Navigation
+# What are the effects of high congitive load?
 
-Hover on the bottom-left corner to see the navigation's controls panel
+* Prioritization is hard, and the frequent context switching even throughout a single sprint leads to a dip in people’s motivation.
 
-### Keyboard Shortcuts
+* Split Attention Effect (all parties)
 
-|     |     |
-| --- | --- |
-| <kbd>space</kbd> / <kbd>tab</kbd> / <kbd>right</kbd> | next animation or slide |
-| <kbd>left</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+* Cost/Time overuns
+
+* Bottlenecks
 
 ---
-layout: image-right
-image: 'https://user-images.githubusercontent.com/13499566/138950614-52ec045b-aa93-4d52-91df-b782cc9c7143.jpg'
+
+# What are the effects of high congitive load?
+
+## Reduced motivation
+
+This is not surprising if we consider the three elements of intrinsic motivation: *autonomy* (quashed by constant juggling of requests and priorities from multiple teams), *mastery* (“jack of all trades, master of none”), and *purpose* (too many domains of responsibility).
+
 ---
 
-# Code
+# Where do we fail now?
+* Big Picture communication
+* Old Monoliths like Incom/DeBrand/Board&Brush
+* No legacy metamemory
 
-Use code snippets and get the highlighting directly!
+---
 
-```ts
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
+# How do we improve?
+* Reduce **Intrinsic Load** by improving overall skillset
 
-function updateUser(id: number, update: Partial<User>) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}
-  saveUser(id, newUser)
-}
-```
+https://docs.google.com/forms/d/1dLb-HFs4raqs84pYphlJLKkmjN22tImw2pozvXSAUJA/edit
+
+---
+
+# How do we improve?
+* Reduce **Extraneous Load** by continuing to improve process, consitency and plaforms.
+    - Tiffany's Efforts / Trello / Jira
+	- Ferg Framework
+	- Ferg Local
+	- Git / Version Control
+	- Cypress Testing
+
+---
+
+# How do we improve?
+* Reduce *Germane Load* by committing specific developer in-brain memory to metamemory (writing it down)
+    - Wiki
+	- Trello
+
+---
+
+# How do we improve?
+* Reduce *Germane Load* by committing specific developer in-brain memory to metamemory (writing it down)
+    - Wiki
+	- Trello
+
+## Coming Soon:
+Architecture Diagrams
+* Data Flow
+* Entity Relationship
+* UML
 
 ---
 layout: center
-class: "text-center"
+---
+# Late Binding
+## Reducing Cognitive Load
+
+---
+layout: default
+---
+# Early vs Late Binding
+
+* Early Binding -- Software knows what the data is and what format and purpose is, (Monoliths)
+* Late Binding -- Software is agnostic to form and use of data. (Microservices)
+
+---
+layout: default
+---
+# Late Binding Pros and Con
+
+## Pros
+* Late binding reduces team cognitive load
+* Late binding is more flexible and reusable saving  development time
+
+## Con
+* Late binding has poorer performance than an early bound method call.
 ---
 
-# Learn More
+# Late Binding Examples
 
-[Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+* Hadoop and NoSQL have no schema till they are used.
+* Microservices - "Extreme Late Binding"
+* This is why style and content should not be mixed. Why HTML should be semantic.
+	
+---
+
+# Comparisons
+
+* Monoliths vs Microservices
+* Monoliths are generally not reusable
+* Monoliths perpetuate side-effects
+* Microservices: Software that fits in our heads.
+
+---
+
+# Software that fits in our heads
+
+* Doesn't have to be microservices, can be object oriented. Thsi was the point of object oriented.
+
+* How many verbs are you using to descibe the thing?
+
+* Avoid Host Affinity
+    * No assumptions can be made about the host on which the service would run.
+
+* Design with server deployment in mind.
+
+* Design a Well-Defined Entry Point and Exit Point
+    * Well documented contract. Success/failure need to be consistent.
+
+---
+
+
+# Software that fits in our heads (cont&lsquo;d)
+
+
+* Functions should have one verb.
+
+* Don't over modularize = greater cognitive load.
+
+* Do Not Share Libraries or SDKs between microservice
+    * Don't repeat yourself.
+	* Updates have bad side effects
+
+* Build the thinnest viable platform
+    * Can Just be a Wiki page that tells about consistency.
+
+
+
+

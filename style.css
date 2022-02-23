@@ -4,7 +4,24 @@ body {
 }
 
 
-h1,h2,h3,h4 {
+h1 {
 	font-family: "EB Garamond" !important;
 	font-weight: 800;
+}
+
+.slidev-layout h1 {
+	font-size: 3rem;
+	padding-bottom: 1rem;
+}
+
+code, p, ul, li {
+	color: black;
+}
+
+code {
+	border: 2px dotted #666666;
+	border-radius: 8px;
+	display: block;
+	padding: 2rem;
+	background-color: #eeddff;
 }
